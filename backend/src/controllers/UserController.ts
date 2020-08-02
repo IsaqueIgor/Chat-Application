@@ -41,7 +41,7 @@ class UserController {
   };
 
   findUsers = (req: express.Request, res: express.Response): void => {
-    const query: string = req.query.query;
+    const query: any = req.query.query;
     UserModel.find()
       .or([
         { fullname: new RegExp(query, "i") },
@@ -121,7 +121,7 @@ class UserController {
   };
 
   verify = (req: express.Request, res: express.Response): void => {
-    const hash: string = req.query.hash;
+    const hash: any = req.query.hash;
 
     if (!hash) {
       res.status(422).json({ errors: "Invalid hash" });
