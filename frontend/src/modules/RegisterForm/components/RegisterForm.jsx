@@ -80,11 +80,11 @@ const RegisterForm = (props) => {
                 type='primary'
                 size='large'
               >
-                Зарегистрироваться
+                Register now
               </Button>
             </Form.Item>
             <Link className='auth__register-link' to='/signin'>
-              Войти в аккаунт
+              Login to your account
             </Link>
           </Form>
         ) : (

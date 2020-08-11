@@ -3,9 +3,9 @@ import get from 'lodash/get';
 
 import RegisterForm from '../components/RegisterForm';
 
-import validateForm from 'utils/validate';
-import { openNotification } from 'utils/helpers';
+import { validateForm, openNotification } from 'utils';
 
+import { userActions } from 'redux/actions';
 import store from 'redux/store';
 
 export default withFormik({

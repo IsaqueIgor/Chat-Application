@@ -3,7 +3,7 @@ import { withFormik } from 'formik';
 import LoginForm from '../components/LoginForm';
 
 import { validateForm } from '../../../utils';
-import { userActions } from '../../../redux/actions/user';
+import { userActions } from '../../../redux/actions';
 
 import store from '../../../redux/store';
 
