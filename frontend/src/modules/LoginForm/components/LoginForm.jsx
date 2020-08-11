@@ -1,5 +1,6 @@
 import React from 'react';
-import { Form, Icon, Input } from 'antd';
+import { Form, Icon } from 'antd';
+import { Input, InputGroup, InputLeftElement } from '@chakra-ui/core';
 import { Link } from 'react-router-dom';
 
 import { Button, Block } from '../../../components';
@@ -29,31 +30,41 @@ const LoginForm = (props) => {
             help={!touched.email ? '' : errors.email}
             hasFeedback
           >
-            <Input
-              id='email'
-              prefix={<Icon type='mail' style={{ color: 'rgba(0,0,0,.25)' }} />}
-              size='large'
-              placeholder='E-Mail'
-              value={values.email}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
+            <InputGroup>
+              <InputLeftElement
+                children={
+                  <Icon type='mail' style={{ color: 'rgba(0,0,0,.25)' }} />
+                }
+              />
+              <Input
+                id='email'
+                placeholder='E-Mail'
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+            </InputGroup>
           </Form.Item>
           <Form.Item
             validateStatus={validateField('password', touched, errors)}
             help={!touched.password ? '' : errors.password}
             hasFeedback
           >
-            <Input
-              id='password'
-              prefix={<Icon type='lock' style={{ color: 'rgba(0,0,0,.25)' }} />}
-              size='large'
-              type='password'
-              placeholder='Password'
-              value={values.password}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
+            <InputGroup>
+              <InputLeftElement
+                children={
+                  <Icon type='lock' style={{ color: 'rgba(0,0,0,.25)' }} />
+                }
+              />
+              <Input
+                id='password'
+                type='password'
+                placeholder='Password'
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+            </InputGroup>
           </Form.Item>
           <Form.Item>
             {isSubmitting && !isValid && <span>Ошибка!</span>}
