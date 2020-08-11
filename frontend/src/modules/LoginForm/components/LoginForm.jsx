@@ -29,6 +29,7 @@ const LoginForm = (props) => {
             validateStatus={validateField('email', touched, errors)}
             help={!touched.email ? '' : errors.email}
             hasFeedback
+            style={{ paddingBottom: '12px' }}
           >
             <InputGroup>
               <InputLeftElement
@@ -49,6 +50,7 @@ const LoginForm = (props) => {
             validateStatus={validateField('password', touched, errors)}
             help={!touched.password ? '' : errors.password}
             hasFeedback
+            style={{ paddingBottom: '12px' }}
           >
             <InputGroup>
               <InputLeftElement
@@ -66,15 +68,22 @@ const LoginForm = (props) => {
               />
             </InputGroup>
           </Form.Item>
-          <Form.Item>
-            {isSubmitting && !isValid && <span>Ошибка!</span>}
+          <Form.Item
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >
+            {isSubmitting && !isValid && <span>Error!</span>}
             <Button
               disabled={isSubmitting}
               onClick={handleSubmit}
               type='primary'
-              size='large'
+              rightIcon='arrow-forward'
+              variantColor='teal'
+              variant='outline'
             >
-              Login to your account
+              Login
             </Button>
           </Form.Item>
           <Link className='auth__register-link' to='/signup'>
