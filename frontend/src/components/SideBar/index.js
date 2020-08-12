@@ -1,7 +1,8 @@
 import React from 'react';
 import { Icon, Button, Modal, Select, Input, Form } from 'antd';
+import { Dialogs } from '../../containers';
 
-import './Sidebar.scss';
+import './styles.scss';
 
 const { Option } = Select;
 const { TextArea } = Input;
@@ -36,7 +37,9 @@ const Sidebar = ({
         <Button onClick={onShow} type='link' shape='circle' icon='form' />
       </div>
 
-      <div className='chat__sidebar-dialogs'></div>
+      <div className='chat__sidebar-dialogs'>
+        <Dialogs userId={user && user._id} />
+      </div>
       <Modal
         title='Create Dialogue'
         visible={visible}
