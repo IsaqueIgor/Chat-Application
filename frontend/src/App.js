@@ -16,7 +16,7 @@ const App = (props) => {
           <Route
             exact
             path={['/signin', '/signup', '/signup/verify']}
-            component={Auth}
+            component={Home}
           />
           <Route
             path='/'
