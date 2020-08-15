@@ -26,10 +26,7 @@ const Dialogs = ({ items, userId, onSearch, inputValue, currentDialogId }) => (
         />
       ))
     ) : (
-      <Empty
-        image={Empty.PRESENTED_IMAGE_SIMPLE}
-        description='Ничего не найдено'
-      />
+      <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description='Nothing found' />
     )}
   </div>
 );

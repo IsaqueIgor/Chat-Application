@@ -27,7 +27,16 @@ const RegisterForm = (props) => {
       </div>
       <Block>
         {!success ? (
-          <Form onSubmit={handleSubmit} className='login-form'>
+          <Form
+            onSubmit={handleSubmit}
+            className='login-form'
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              flexDirection: 'column',
+              height: '300px',
+            }}
+          >
             <InputGroup>
               <InputLeftElement
                 children={

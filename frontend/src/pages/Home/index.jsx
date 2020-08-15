@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { withRouter } from 'react-router';
-import { SideBar } from '../../containers';
+import { SideBar, Status } from '../../containers';
 import { connect } from 'react-redux';
 
 import './Home.scss';
@@ -21,6 +21,9 @@ const Home = (props) => {
       <div className='chat'>
         <SideBar />
         <h1>Home</h1>
+        <div className='chat__dialog'>
+          <Status />
+        </div>
       </div>
     </section>
   );
